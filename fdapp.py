@@ -1,6 +1,5 @@
 import streamlit as st
-import plotly.express as px
-import pandas as pd
+
 
 # Set page configuration
 st.set_page_config(page_title="Fintastic Data Solutions for FMCG", page_icon="📈", layout="wide")

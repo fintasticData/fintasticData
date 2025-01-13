@@ -82,7 +82,7 @@ def load_image(image_path, width=None):
 def header_section():
     col1, col2 = st.columns([1, 2])
     with col1:
-        logo = load_image("assets/logo.png", width=150)
+        logo = load_image("fdLogo.png", width=150)
         st.image(logo)
     with col2:
         st.markdown("<h1 style='text-align: center;'>Transforming Data into Actionable Insights</h1>", unsafe_allow_html=True)

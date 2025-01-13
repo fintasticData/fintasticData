@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.Title("Fintastic Data")
+st.title("Fintastic Data")

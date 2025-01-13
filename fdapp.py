@@ -125,36 +125,24 @@ def services_section():
         {
             "title": "Artificial Intelligence (AI)",
             "description": "Leverage AI to automate processes, enhance decision-making, and create personalized customer experiences. Our AI solutions include machine learning models, natural language processing, and computer vision applications tailored to your business needs.",
-            "icon": "assets/ai_icon.png"
+            "icon": "assets/ai_icon.PNG"
         },
         {
             "title": "Data Solutions",
             "description": "Transform your data into valuable insights with our comprehensive data solutions. From data warehousing and integration to advanced analytics and visualization, we ensure your data is accurate, accessible, and actionable.",
-            "icon": "assets/data_icon.png"
-        },
-        {
-            "title": "Automations",
-            "description": "Streamline your operations with our automation services. We design and implement robotic process automation (RPA) and workflow automation systems that reduce manual effort, minimize errors, and increase productivity.",
-            "icon": "assets/automation_icon.png"
-        },
-        {
-            "title": "Data Science",
-            "description": "Harness the power of data science to uncover trends, predict outcomes, and drive strategic initiatives. Our data scientists utilize statistical analysis, predictive modeling, and data mining techniques to provide deep insights into your business operations.",
-            "icon": "assets/data_science_icon.png"
-        },
-        {
-            "title": "Applications (Apps)",
-            "description": "Develop custom applications that meet your unique business requirements. From mobile apps to enterprise software, we build scalable and user-friendly applications that enhance your business capabilities and user engagement.",
-            "icon": "assets/apps_icon.png"
+            "icon": "assets/data_icon.PNG"
         }
     ]
     
     cols = st.columns(3)
     for idx, service in enumerate(services):
         with cols[idx % 3]:
-            st.image(service["icon"], width=80)
+            # Use absolute path to load the icon
+            icon_path = os.path.join(os.path.dirname(__file__), service["icon"])
+            st.image(icon_path, width=80)
             st.markdown(f"### {service['title']}")
             st.markdown(service["description"])
+
 
 # AI Products Section
 def ai_products_section():

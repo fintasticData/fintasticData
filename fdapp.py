@@ -55,25 +55,32 @@ def header_section():
         .header p {
             font-size: 1.5rem;
         }
-        .header button {
-            margin: 10px;
-        }
         </style>
         <div class="header">
-            <img src="assets/Logo1.png" style="width:100px; height:auto;" alt="Fintastic Data Logo">
-            <h1>Transforming Data into Actionable Insights</h1>
-            <p>Unlock the potential of your business with our cutting-edge AI, Data Solutions, and Automation services.</p>
         </div>
         """,
         unsafe_allow_html=True
     )
-    col1, col2 = st.columns([1, 1])
-    with col1:
+    
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
+        logo_path = os.path.join("assets", "Logo1.png")
+        st.image(load_image(logo_path, width=100))
+        st.markdown(
+            """
+            <h1>Transforming Data into Actionable Insights</h1>
+            <p>Unlock the potential of your business with our cutting-edge AI, Data Solutions, and Automation services.</p>
+            """,
+            unsafe_allow_html=True
+        )
+    col4, col5 = st.columns([1, 1])
+    with col4:
         if st.button("Get Started"):
             st.experimental_rerun()
-    with col2:
+    with col5:
         if st.button("Learn More"):
             st.experimental_rerun()
+
 
 # About Us Section
 def about_us_section():

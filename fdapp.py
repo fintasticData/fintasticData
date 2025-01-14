@@ -30,7 +30,7 @@ def display_service(title, description, icon):
 def header_section():
     col1, col2 = st.columns([1, 2])
     with col1:
-        logo_path = os.path.join("assets", "Logo1.PNG")
+        logo_path = os.path.join("assets", "Logo1.png")
         st.image(load_image(logo_path, width=150))
     with col2:
         st.markdown("<h1 style='text-align: center;'>Transforming Data into Actionable Insights</h1>", unsafe_allow_html=True)

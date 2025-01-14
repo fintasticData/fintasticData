@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 import os
 
 # Set page configuration
@@ -11,8 +11,21 @@ st.set_page_config(
 )
 
 # Helper function to load images
-def load_image(image_path, width=None):
+def load_image(image_path, width=None, invert_colors=False):
+    """
+    Load an image from the specified path, optionally resize it, and invert colors if specified.
+
+    Args:
+        image_path (str): Path to the image file.
+        width (int, optional): Desired width of the image.
+        invert_colors (bool, optional): Whether to invert the image colors.
+
+    Returns:
+        Image: The processed image.
+    """
     img = Image.open(image_path)
+    if invert_colors:
+        img = ImageOps.invert(img.convert("RGB"))  # Invert colors for dark mode
     if width:
         img = img.resize((width, int(img.height * width / img.width)))
     return img
@@ -28,10 +41,13 @@ def display_service(title, description, icon):
 
 # Header Section
 def header_section():
+    # Determine if dark mode is selected
+    is_dark_mode = st.get_option("theme.base") == "dark"
+
     col1, col2 = st.columns([1, 2])
     with col1:
-        logo_path = os.path.join("assets", "Logo1.png")
-        st.image(load_image(logo_path, width=150))
+        logo_path = os.path.join("assets", "fdLogo.PNG")
+        st.image(load_image(logo_path, width=150, invert_colors=is_dark_mode))
     with col2:
         st.markdown("<h1 style='text-align: center;'>Transforming Data into Actionable Insights</h1>", unsafe_allow_html=True)
         st.markdown(

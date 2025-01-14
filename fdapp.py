@@ -47,34 +47,11 @@ def display_service(title, description, icon):
 
 # Header Section
 def header_section():
-    # Adding a background color and centering the content
-    st.markdown(
-        """
-        <style>
-        .header {
-            background: linear-gradient(to right, #4caf50, #2e7d32);
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 1.5rem;
-        }
-        </style>
-        <div class="header">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    
+    st.image(load_image(logo_path, width=100))
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
         logo_path = os.path.join("assets", "Logo1.png")
-        st.image(load_image(logo_path, width=100))
+        #st.image(load_image(logo_path, width=100))
         st.markdown(
             """
             <h1>Transforming Data into Actionable Insights</h1>

@@ -47,10 +47,11 @@ def display_service(title, description, icon):
 
 # Header Section
 def header_section():
+    logo_path = os.path.join("assets", "Logo1.png")
     st.image(load_image(logo_path, width=100))
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
-        logo_path = os.path.join("assets", "Logo1.png")
+        #logo_path = os.path.join("assets", "Logo1.png")
         #st.image(load_image(logo_path, width=100))
         st.markdown(
             """

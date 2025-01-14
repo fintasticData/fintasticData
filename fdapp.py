@@ -2,6 +2,19 @@ import streamlit as st
 from PIL import Image
 import os
 
+st.sidebar.title("Navigation")
+page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
+
+if page == "Home":
+    header_section()
+    about_us_section()
+    services_section()
+    ebook_launch_section()
+    contact_section()
+elif page == "Forecasting Demonstration":
+    forecasting_page()
+
+
 # Set page configuration
 st.set_page_config(
     page_title="Fintastic Data",

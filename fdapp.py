@@ -162,6 +162,16 @@ def contact_section():
     st.markdown("<h2 class='section-title'>Contact Us</h2>", unsafe_allow_html=True)
     st.markdown("<div class='section-subtitle'>Ready to Transform Your Business?</div>", unsafe_allow_html=True)
 
+    st.markdown(
+            """
+                Contact us:
+                clinton@fintasticdata.co.za
+                akshar@fintasticdata.co.za
+                eugene@fintasticdata.co.za
+            """,
+            unsafe_allow_html=True
+        )
+    
     # Contact Form
     with st.form("contact_form", clear_on_submit=True):
         col1, col2 = st.columns(2)

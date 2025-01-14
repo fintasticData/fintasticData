@@ -6,8 +6,19 @@ import os
 st.set_page_config(
     page_title="Fintastic Data",
     page_icon="📊",
-    #layout="wide",
     initial_sidebar_state="collapsed",
+    theme="light"
+)
+
+# Hide the Streamlit menu and footer
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 # Helper function to load images
@@ -28,23 +39,42 @@ def display_service(title, description, icon):
 
 # Header Section
 def header_section():
-    col1, col2 = st.columns([1, 2])
+    # Adding a background color and centering the content
+    st.markdown(
+        """
+        <style>
+        .header {
+            background: linear-gradient(to right, #4caf50, #2e7d32);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.5rem;
+        }
+        .header button {
+            margin: 10px;
+        }
+        </style>
+        <div class="header">
+            <img src="assets/Logo1.png" style="width:100px; height:auto;" alt="Fintastic Data Logo">
+            <h1>Transforming Data into Actionable Insights</h1>
+            <p>Unlock the potential of your business with our cutting-edge AI, Data Solutions, and Automation services.</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    col1, col2 = st.columns([1, 1])
     with col1:
-        logo_path = os.path.join("assets", "Logo1.png")
-        st.image(load_image(logo_path, width=150))
+        if st.button("Get Started"):
+            st.experimental_rerun()
     with col2:
-        st.markdown("<h1 style='text-align: center;'>Transforming Data into Actionable Insights</h1>", unsafe_allow_html=True)
-        st.markdown(
-            "<p style='text-align: center; font-size:20px;'>Unlock the potential of your business with our cutting-edge AI, Data Solutions, and Automation services.</p>",
-            unsafe_allow_html=True
-        )
-        col3, col4 = st.columns([1,1])
-        with col3:
-            if st.button("Get Started"):
-                st.experimental_rerun()
-        with col4:
-            if st.button("Learn More"):
-                st.experimental_rerun()
+        if st.button("Learn More"):
+            st.experimental_rerun()
 
 # About Us Section
 def about_us_section():

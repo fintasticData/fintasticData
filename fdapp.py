@@ -172,19 +172,7 @@ def contact_section():
             unsafe_allow_html=True
         )
     
-    # Contact Form
-    with st.form("contact_form", clear_on_submit=True):
-        col1, col2 = st.columns(2)
-        with col1:
-            name = st.text_input("Name")
-            email = st.text_input("Email")
-        with col2:
-            phone = st.text_input("Phone")
-            subject = st.text_input("Subject")
-        message = st.text_area("Message")
-        submitted = st.form_submit_button("Send Message")
-        if submitted:
-            st.success("Thank you for reaching out! We will get back to you shortly.")
+
             
 
     

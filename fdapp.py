@@ -6,8 +6,7 @@ import os
 st.set_page_config(
     page_title="Fintastic Data",
     page_icon="📊",
-    initial_sidebar_state="collapsed",
-    theme="light"
+    initial_sidebar_state="collapsed"
 )
 
 # Hide the Streamlit menu and footer

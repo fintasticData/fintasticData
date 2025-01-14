@@ -165,9 +165,9 @@ def contact_section():
     st.markdown(
             """
                 Contact us:
-                clinton@fintasticdata.co.za
-                akshar@fintasticdata.co.za
-                eugene@fintasticdata.co.za
+                clinton@fintasticdata.co.za , 
+                akshar@fintasticdata.co.za , 
+                eugene@fintasticdata.co.za 
             """,
             unsafe_allow_html=True
         )

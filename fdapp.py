@@ -16,6 +16,8 @@ st.set_page_config(
 st.sidebar.title("Navigation")
 page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
 
+
+
 # Hide the Streamlit menu and footer
 st.markdown(
     """
@@ -202,6 +204,7 @@ if page == "Home":
     contact_section()
 elif page == "Forecasting Demonstration":
     forecasting_page()
+
     
 # Main App Layout
 def main():

@@ -5,14 +5,7 @@ import os
 st.sidebar.title("Navigation")
 page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
 
-if page == "Home":
-    header_section()
-    about_us_section()
-    services_section()
-    ebook_launch_section()
-    contact_section()
-elif page == "Forecasting Demonstration":
-    forecasting_page()
+
 
 
 # Set page configuration
@@ -199,7 +192,16 @@ def contact_section():
         submitted = st.form_submit_button("Send Message")
         if submitted:
             st.success("Thank you for reaching out! We will get back to you shortly.")
-
+            
+if page == "Home":
+    header_section()
+    about_us_section()
+    services_section()
+    ebook_launch_section()
+    contact_section()
+elif page == "Forecasting Demonstration":
+    forecasting_page()
+    
 # Main App Layout
 def main():
     header_section()

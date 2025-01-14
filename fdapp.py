@@ -48,7 +48,7 @@ def display_service(title, description, icon):
 # Header Section
 def header_section():
     logo_path = os.path.join("assets", "Logo1.png")
-    st.image(load_image(logo_path, width=200))
+    #st.image(load_image(logo_path, width=200))
     bigPic = os.path.join("assets", "bigPic.png")
     st.image(load_image(bigPic, width=600))
     col2, col3 = st.columns([3, 1])

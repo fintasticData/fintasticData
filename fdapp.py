@@ -2,8 +2,6 @@ import streamlit as st
 from PIL import Image
 import os
 
-st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
 
 
 
@@ -14,6 +12,9 @@ st.set_page_config(
     page_icon="📊",
     initial_sidebar_state="collapsed"
 )
+
+st.sidebar.title("Navigation")
+page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
 
 # Hide the Streamlit menu and footer
 st.markdown(

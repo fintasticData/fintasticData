@@ -6,6 +6,8 @@ import os
 
 
 
+
+
 # Set page configuration
 st.set_page_config(
     page_title="Fintastic Data",
@@ -13,8 +15,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
+#st.sidebar.title("Navigation")
+#page = st.sidebar.selectbox("Choose a page:", ["Home", "Forecasting Demonstration"])
 
 
 

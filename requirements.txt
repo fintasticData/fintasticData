@@ -1,0 +1,8 @@
+pandas
+scikit-learn
+numpy
+streamlit_authenticator 
+st_pages 
+plotly.express
+plotly
+
